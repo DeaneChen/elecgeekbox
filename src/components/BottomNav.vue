@@ -23,7 +23,7 @@ const isActive = (path: string) => {
 </script>
 
 <template>
-  <n-layout-footer class="bottom-nav flex justify-around p-16">
+  <n-layout-footer class="bottom-nav flex justify-around p-8">
     <div
       v-for="item in navItems"
       :key="item.path"
@@ -50,12 +50,12 @@ const isActive = (path: string) => {
   z-index: 100;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 
 .nav-item {
   position: relative;
-  padding: 8px 0;
+  padding: 4px 0;
   transition: all 0.3s ease;
   color: var(--nav-color, #666);
 }
@@ -105,7 +105,7 @@ const isActive = (path: string) => {
 @media (prefers-color-scheme: dark) {
   .bottom-nav {
     background: rgba(24, 24, 28, 0.95);
-    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.05);
+    box-shadow: 0 -2px 4px rgba(255, 255, 255, 0.05);
   }
 
   .nav-item {

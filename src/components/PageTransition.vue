@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouteLocationNormalized } from 'vue-router'
-import { Component } from 'vue'
+import { VNode } from 'vue'
 
 // 判断是否是详情页面（使用 PageLayout 的页面）
 const isDetailPage = (path: string) => {
@@ -19,7 +19,7 @@ const getTransitionName = (to: string, from: string) => {
 </script>
 
 <template>
-  <router-view v-slot="{ Component, route }: { Component: Component, route: RouteLocationNormalized }">
+  <router-view v-slot="{ Component, route }: { Component: VNode, route: RouteLocationNormalized }">
     <transition
       :name="getTransitionName(route.path, route.meta.previousRoute?.path || '')"
     >

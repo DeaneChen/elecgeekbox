@@ -1,19 +1,10 @@
 <!--
  * @Author       : LuHeQiu
  * @Date         : 2025-01-06 20:13:53
- * @LastEditTime : 2025-01-06 23:27:31
+ * @LastEditTime : 2025-01-07 01:53:01
  * @LastEditors  : LuHeQiu
  * @Description  : 
  * @FilePath     : /elecgeekbox/src/pages/tools/index.vue
- * @HomePage     : https://www.luheqiu.com
--->
-<!--
- * @Author       : LuHeQiu
- * @Date         : 2025-01-05 22:55:59
- * @LastEditTime : 2025-01-06 13:21:11
- * @LastEditors  : LuHeQiu
- * @Description  : 主页
- * @FilePath     : /elecgeekbox/src/pages/home/index.vue
  * @HomePage     : https://www.luheqiu.com
 -->
 <script setup lang="ts">
@@ -21,12 +12,12 @@ import { NGrid, NGridItem } from 'naive-ui'
 import { useRouter } from 'vue-router'
 import { ManualGearbox } from '@vicons/tabler'
 
-import { Component } from 'vue'
+import { DefineComponent } from 'vue'
 
 interface Tool {
   id: string
   name: string
-  icon: string | Component
+  icon: string | DefineComponent<{}, {}, any>
   route: string
 }
 
@@ -48,7 +39,7 @@ const handleToolClick = (tool: Tool) => {
 </script>
 
 <template>
-  <div class="tools-container p-4">
+  <div class="tools-container px-8 py-16">
     <NGrid :x-gap="12" :y-gap="12" cols="3">
       <NGridItem v-for="tool in tools" :key="tool.id">
         <div
@@ -67,45 +58,34 @@ const handleToolClick = (tool: Tool) => {
 
 <style scoped>
 .tools-container {
-  height: 98%;
+  height: 97%;
   overflow-y: auto;
 }
 
 .tool-item {
   padding: 0.5rem;
-  border: 2px solid #fff;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   aspect-ratio: 1 / 1;
+  background-color: var(--bg-secondary);
 }
 
 .tool-item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--bg-secondary);
   transform: translateY(-2px);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .tool-item:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
 .tool-name {
   font-size: 14px;
-  color: var(--text-color);
+  color: var(--text-primary);
   white-space: pre-line;
   text-align: center;
-}
-
-:root {
-  --border-color: #eee;
-  --text-color: #333;
-}
-
-/* 暗色模式 */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --border-color: #333;
-    --text-color: #fff;
-  }
 }
 </style> 

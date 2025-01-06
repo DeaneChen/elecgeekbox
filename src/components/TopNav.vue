@@ -19,7 +19,7 @@ const handleBack = () => {
 </script>
 
 <template>
-  <n-layout-header class="top-nav flex items-center justify-between p-8">
+  <n-layout-header class="flex items-center justify-between p-8 top-nav ">
     <div v-if="showBack" class="cursor-pointer" @click="handleBack">
       <n-icon><arrow-back /></n-icon>
     </div>
@@ -36,5 +36,15 @@ const handleBack = () => {
   z-index: 100;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: var(--nav-color, #333);
+}
+
+/* 暗色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .top-nav {
+    background: rgba(24, 24, 28, 0.95);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+    --nav-color: #999;
+  }
 }
 </style> 

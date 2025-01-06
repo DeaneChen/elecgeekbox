@@ -23,8 +23,9 @@ const route = useRoute()
 
 <style scoped>
 .main-content {
-  margin-top: 48px; /* 顶部导航栏高度 */
-  margin-bottom: 80px; /* 底部导航栏高度 */
+  margin-top: 44.8px;
+  margin-bottom: 73.2px;
   overflow-y: auto;
+  background-color: var(--bg-primary);
 }
 </style> 
