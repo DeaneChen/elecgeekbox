@@ -1,4 +1,25 @@
-# ElecGeekBox - 电子极客工具箱
+
+
+<div align="center">
+    <h1>ElecGeekBox - 电子极客工具箱</h1>
+    <p>一款为电子开发工程师打造的跨平台工具集成应用</p>
+</div>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Version-0.1.0-blue?style=flat-square" alt="Version">
+    <img src="https://img.shields.io/badge/Tauri-2.0-blue?style=flat-square" alt="Tauri">
+    <img src="https://img.shields.io/badge/Vue-3.0-green?style=flat-square" alt="Vue">
+    <img src="https://img.shields.io/badge/TypeScript-5.6-blue?style=flat-square" alt="TypeScript">
+    <img src="https://img.shields.io/badge/Platform-Android%20|%20Desktop-lightgray?style=flat-square" alt="Platform">
+    <img src="https://img.shields.io/badge/License-GPL%20v3-yellow?style=flat-square" alt="License">
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Status-开发中-orange?style=flat-square" alt="Status">
+    <img src="https://img.shields.io/badge/UI-Naive%20UI-blue?style=flat-square" alt="UI">
+    <img src="https://img.shields.io/badge/Build-Vite-brightgreen?style=flat-square" alt="Build">
+</p>
+
 
 一款为电子开发工程师打造的跨平台工具集成应用。基于 Tauri + Vue 3 + TypeScript 开发，专注于提供简洁、高效的开发辅助工具。
 
