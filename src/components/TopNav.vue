@@ -19,11 +19,11 @@ const handleBack = () => {
 </script>
 
 <template>
-  <n-layout-header class="top-nav flex items-center justify-between p-4">
+  <n-layout-header class="top-nav flex items-center justify-between p-8">
     <div v-if="showBack" class="cursor-pointer" @click="handleBack">
       <n-icon><arrow-back /></n-icon>
     </div>
-    <h1 class="text-lg font-bold flex-1 text-center">{{ title }}</h1>
+    <text class="text-lg font-bold flex-1 text-center">{{ title }}</text>
   </n-layout-header>
 </template>
 

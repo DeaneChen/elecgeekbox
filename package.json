@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2",
+    "@vicons/tabler": "^0.13.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "naive-ui": "^2.40.4",
     "sass": "^1.83.1",

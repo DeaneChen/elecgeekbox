@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 20px;
   font-weight: 400;
   color: #0f0f0f;
   background-color: #f6f6f6;
@@ -25,9 +25,15 @@
 .h-full { height: 100%; }
 
 /* 原子类 - 间距 */
-.p-4 { padding: 1rem; }
-.m-4 { margin: 1rem; }
-.gap-4 { gap: 1rem; }
+.p-2 { padding: 0.125rem; }
+.p-4 { padding: 0.25rem; }
+.p-8 { padding: 0.5rem; }
+.p-16 { padding: 1.0rem; }
+.m-2 { margin: 0.125rem; }
+.m-4 { margin: 0.25rem; }
+.m-8 { margin: 0.5rem; }
+.m-16 { margin: 1.0rem; }
+.gap-4 { gap: 0.25rem; }
 
 /* 原子类 - 文本 */
 .text-center { text-align: center; }
