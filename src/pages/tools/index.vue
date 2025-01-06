@@ -1,7 +1,7 @@
 <!--
  * @Author       : LuHeQiu
  * @Date         : 2025-01-06 20:13:53
- * @LastEditTime : 2025-01-06 21:06:02
+ * @LastEditTime : 2025-01-06 23:27:31
  * @LastEditors  : LuHeQiu
  * @Description  : 
  * @FilePath     : /elecgeekbox/src/pages/tools/index.vue
@@ -17,14 +17,16 @@
  * @HomePage     : https://www.luheqiu.com
 -->
 <script setup lang="ts">
-import { NGrid, NGridItem, NCard } from 'naive-ui'
+import { NGrid, NGridItem } from 'naive-ui'
 import { useRouter } from 'vue-router'
 import { ManualGearbox } from '@vicons/tabler'
+
+import { Component } from 'vue'
 
 interface Tool {
   id: string
   name: string
-  icon: string
+  icon: string | Component
   route: string
 }
 
