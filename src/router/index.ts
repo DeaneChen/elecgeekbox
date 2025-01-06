@@ -7,6 +7,7 @@ const routes = [
     path: '/',
     redirect: '/home',
     component: DefaultLayout,
+    meta: { layout: 'default' },
     children: [
       {
         path: 'home',
@@ -39,12 +40,33 @@ const routes = [
         meta: { title: '详情' }
       }
     ]
+  },
+  {
+    path: '/tools/buck-inductor',
+    component: PageLayout,
+    meta: { layout: 'page', title: 'Buck电感计算器' },
+    children: [
+      {
+        path: '',
+        component: () => import('../pages/tools/buck-inductor/index.vue')
+      }
+    ]
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { top: 0 }
+  }
+})
+
+router.beforeEach((to, from) => {
+  to.from = from
 })
 
 export default router 
