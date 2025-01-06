@@ -22,8 +22,7 @@ const getTransitionName = (to: string, from: string) => {
 <template>
   <router-view v-slot="{ Component, route }">
     <transition
-      :name="getTransitionName(route.path, route.from?.path || '')"
-      mode="out-in"
+      :name="getTransitionName(route.path, route.meta.previousRoute?.path || '')"
     >
        <component class="page-wrapper" :is="Component" />
     </transition>
@@ -43,18 +42,18 @@ const getTransitionName = (to: string, from: string) => {
 .slide-left-leave-active,
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.5s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .slide-left-enter-from {
   transform: translateX(100%);
-  opacity: 0;
-  box-shadow: -10px 0 20px rgba(0, 0, 0, 0.15);
+  opacity: 0.25;
+  box-shadow: -3px 0px 10px -2px rgba(0, 0, 0, 0.15)
 }
 
 .slide-left-enter-active {
-  z-index: 2;
-  box-shadow: -10px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  box-shadow: -3px 0px 10px -2px rgba(0, 0, 0, 0.15)
 }
 
 .slide-left-leave-to {

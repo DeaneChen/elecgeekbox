@@ -13,8 +13,16 @@ const route = useRoute()
 <template>
   <div class="flex flex-col h-full">
     <TopNav :title="route.meta.title as string" :showBack="true" />
-    <main class="flex-1">
+    <main class="flex-1 main-content">
       <router-view></router-view>
     </main>
   </div>
 </template> 
+
+
+<style scoped>
+.main-content {
+  margin-top: 48px; /* 顶部导航栏高度 */
+  overflow-y: auto;
+}
+</style> 

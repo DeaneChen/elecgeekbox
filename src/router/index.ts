@@ -1,3 +1,12 @@
+/*
+ * @Author       : LuHeQiu
+ * @Date         : 2025-01-06 22:02:39
+ * @LastEditTime : 2025-01-06 22:07:37
+ * @LastEditors  : LuHeQiu
+ * @Description  : 
+ * @FilePath     : /elecgeekbox/src/router/index.ts
+ * @HomePage     : https://www.luheqiu.com
+ */
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import PageLayout from '../layouts/PageLayout.vue'
@@ -66,7 +75,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from) => {
-  to.from = from
+  to.meta.previousRoute = from
 })
 
 export default router 
