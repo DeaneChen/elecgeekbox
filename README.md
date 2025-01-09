@@ -1,3 +1,12 @@
+<!--
+ * @Author       : LuHeQiu
+ * @Date         : 2025-01-06 20:13:53
+ * @LastEditTime : 2025-01-07 16:26:34
+ * @LastEditors  : LuHeQiu
+ * @Description  : 
+ * @FilePath     : /elecgeekbox/README.md
+ * @HomePage     : https://www.luheqiu.com
+-->
 
 
 <div align="center">
@@ -51,7 +60,7 @@ npm run tauri android dev
 ```
 构建生产版本
 ```bash
-npm run tauri android build -- --aab --target aarch64
+npm run tauri android build -- --apk --target aarch64
 ```
 
 

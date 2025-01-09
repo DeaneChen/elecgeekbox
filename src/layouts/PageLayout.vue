@@ -23,7 +23,7 @@ const route = useRoute()
 <style scoped>
 .main-content {
   margin-top: 44.8px;
-  margin-bottom: 73.2px;
+  /* margin-bottom: 73.2px; */
   overflow-y: auto;
   background-color: var(--bg-primary);
 }

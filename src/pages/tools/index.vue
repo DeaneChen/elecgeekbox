@@ -1,7 +1,7 @@
 <!--
  * @Author       : LuHeQiu
  * @Date         : 2025-01-06 20:13:53
- * @LastEditTime : 2025-01-07 01:53:01
+ * @LastEditTime : 2025-01-07 22:45:30
  * @LastEditors  : LuHeQiu
  * @Description  : 
  * @FilePath     : /elecgeekbox/src/pages/tools/index.vue
@@ -13,6 +13,8 @@ import { useRouter } from 'vue-router'
 import { ManualGearbox } from '@vicons/tabler'
 
 import { DefineComponent } from 'vue'
+
+// import gsap from 'gsap'
 
 interface Tool {
   id: string
@@ -33,7 +35,35 @@ const tools: Tool[] = [
 
 const router = useRouter()
 
-const handleToolClick = (tool: Tool) => {
+const handleToolClick = (tool: Tool, _index: number) => {
+
+  // const card = document.querySelectorAll('.tool-item')[index]
+  // const rect = card.getBoundingClientRect()
+  // gsap.to(card, {
+  //       width: '150vw',
+  //       height: '150vh',
+  //       position: 'fixed',
+  //       // top: 0,
+  //       // left: 0,
+  //       x: - rect.left-8, // 居中
+  //       y: - rect.top-8, // 居中
+  //       zIndex: 999,
+  //       duration: 0.8,
+  //       ease: "power3.inout",
+  //       onComplete: () => {
+  //         // 动画完成后跳转
+  //         setTimeout(() => {
+  //           router.push(tool.route)
+  //         }, 0.6);
+  //       },
+  //       onUpdate: () => {
+  //         // 在动画进行到一半时执行跳转
+  //         // if (parseFloat(gsap.getProperty(card,'x') as string) <= (-rect.left-8)*0.99) { // 判断动画进度
+  //         //   router.push(tool.route)
+  //         // }
+  //       }
+        
+  //     })
   router.push(tool.route)
 }
 </script>
@@ -41,10 +71,10 @@ const handleToolClick = (tool: Tool) => {
 <template>
   <div class="tools-container px-8 py-16">
     <NGrid :x-gap="12" :y-gap="12" cols="3">
-      <NGridItem v-for="tool in tools" :key="tool.id">
+      <NGridItem v-for="(tool,index) in tools" :key="tool.id">
         <div
           class="flex flex-col items-center justify-center tool-item "
-          @click="handleToolClick(tool)"
+          @click="handleToolClick(tool,index)"
         >
           <n-icon class="p-4" size="24">
             <component :is="tool.icon" />
@@ -58,7 +88,7 @@ const handleToolClick = (tool: Tool) => {
 
 <style scoped>
 .tools-container {
-  height: 97%;
+  height: 94%;
   overflow-y: auto;
 }
 
