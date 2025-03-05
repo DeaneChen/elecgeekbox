@@ -9,7 +9,7 @@ import t_line from '@/assets/circuit/t_line.svg';
 import h_line from '@/assets/circuit/h_line.svg';
 
 // 定义可交互的元件类型
-const interactiveComponents = ['end_vcc', 'inductor']
+// const interactiveComponents = ['end_vcc', 'inductor']
 
 // 定义电路元件类型
 interface CircuitItem {
@@ -21,7 +21,7 @@ interface CircuitItem {
 
 // 电路图尺寸计算
 const BASE_WIDTH = 336 // 基准宽度
-const BASE_ICON_SIZE = 48 // 基准图标大小
+// const BASE_ICON_SIZE = 48 // 基准图标大小
 const buck_circuit = ref<HTMLElement | null>(null)
 const containerWidth = ref(BASE_WIDTH)
 
@@ -99,12 +99,12 @@ const getItemStyle = (className?: string) => {
 }
 
 // 参数输入相关
-interface Parameter {
-  value: string | number
-  placeholder: string
-  label: string
-  unit: string
-}
+// interface Parameter {
+//   value: string | number
+//   placeholder: string
+//   label: string
+//   unit: string
+// }
 
 const parameters = reactive({
   inputVoltage: {

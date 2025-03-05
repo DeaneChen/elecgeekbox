@@ -122,3 +122,42 @@ How can I resolve this? If you propose a fix, please make it concise.
 
 # 12
 @BottomNav.vue 调整一下光晕效果，光晕要向四周逐渐模糊，且光晕的中心可以适当往左下方偏移一点点。另外，光晕效果的切换（即激活状态的切换）缺少柔和的动画效果
+
+# 13
+@.cursorrules @global.scss @Codebase @DefaultLayout.vue @PageLayout.vue @index.vue  请帮忙补充一下全局的暗黑模式兼容，比如页面背景为人眼舒适的黑色，字体和icon图标变为白色，也可以参考bottomNav那个组件的设计。css尽量简洁一点，不要做多余的设置
+
+# 14
+@index.vue 请把grid部分的代码改成用v-for进行渲染。
+
+类似于：
+  <n-grid
+    :cols="5"
+    :collapsed="gridCollapsed"
+    :collapsed-rows="gridCollapsedRows"
+  >
+    <n-gi
+      v-for="i in gridItemCount"
+      :key="i"
+      :class="i % 2 ? 'green' : 'light-green'"
+    >
+      {{ i }}
+    </n-gi>
+    <n-gi v-if="showSuffix" suffix class="suffix" #="{ overflow }">
+      {{ overflow ? '存在溢出' : '不存在溢出' }}
+    </n-gi>
+  </n-grid>
+
+# 15 
+@index.vue 可否随着页面宽度的变化，动态地调整，n-icon 的 size。同时，需要确保 mid-right-rot和 mid-right-rot两个类中的translateX的值为size的四分之一。
+
+# 16
+@index.vue 可否尝试在电路图卡片的下方增加一个这样的参数输入面板
+
+# 17
+@cursorchangelog @.cursorrules @index.vue 请给部分电路元件（end_vcc、inductor）增加按下效果，按下时icon微微放大，并泛出光晕和边框阴影。
+
+# 18
+@cursorchangelog @.cursorrules @index.vue 给元件增加变色效果，使其更加突出，同时，元件被选中后保持微微放大的状态，但略小于按下时的大小
+
+# 19 
+@cursorchangelog @.cursorrules @index.vue 调整选中逻辑和状态管理部分的代码，同一时刻，只能有一个元件可以被选中。
