@@ -161,3 +161,10 @@ How can I resolve this? If you propose a fix, please make it concise.
 
 # 19 
 @cursorchangelog @.cursorrules @index.vue 调整选中逻辑和状态管理部分的代码，同一时刻，只能有一个元件可以被选中。
+
+#20
+@App.vue @main.ts @src @MainActivity.kt 
+增加相关函数，实现，当安卓操作系统主题变为夜间模式的时候，反转系统顶部状态栏颜色（背景变为18171C），状态栏图标变为白色。目前是在MainActivity中进行了一些默认的设置。
+
+#21
+@MainActivity.kt 现在仍然存在微小问题，虽然目前系统可以随着夜间模式的切换，正常实现顶部状态栏颜色的变换，但是若程序以日间模式进入程序，会发现状态栏仍然为普通状态。请重构精简代码以修复这个问题
