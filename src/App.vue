@@ -7,11 +7,18 @@
 <script setup lang="ts">
 import PageTransition from './components/PageTransition.vue'
 import { darkTheme, useOsTheme, GlobalThemeOverrides } from 'naive-ui'
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
+
 // 使用 useOsTheme 获取操作系统主题
 const osThemeRef = useOsTheme()
 // 计算属性，根据操作系统主题返回对应的 naive-ui 主题
 const theme = computed(() => (osThemeRef.value === 'dark' ? darkTheme : null))
+
+// 监听主题变化
+watch(osThemeRef, (newTheme) => {
+  // 可以在这里添加其他主题相关的逻辑
+  console.log('系统主题变化:', newTheme)
+})
 
 const themeOverrides: GlobalThemeOverrides = {
     "common": {

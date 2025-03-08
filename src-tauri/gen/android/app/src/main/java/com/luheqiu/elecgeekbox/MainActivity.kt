@@ -10,30 +10,33 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.graphics.Color
+import android.content.res.Configuration
 
 class MainActivity : TauriActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // 初始化时立即应用主题
+        updateStatusBarByTheme(resources.configuration)
+    }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // Set the status bar color
-            window.setStatusBarColor( Color.WHITE) 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        updateStatusBarByTheme(newConfig)
+    }
 
-            // // Allow content to extend under the system bars
-            // WindowCompat.setDecorFitsSystemWindows(window, false);
-
-            // // Get the insets controller to manage system UI
-            // val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView);
-
-            // // Ensure the status bar is fully transparent
-            // window.statusBarColor = android.graphics.Color.TRANSPARENT;
-        }
-
-         // 设置状态栏图标为黑色
+    private fun updateStatusBarByTheme(config: Configuration) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val decorView: View = window.decorView
-            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            val isDarkMode = config.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+            
+            if (isDarkMode) {
+                // 夜间模式：深色背景，白色图标
+                window.statusBarColor = Color.parseColor("#18171C")
+                window.decorView.systemUiVisibility = 0 // 重置为默认状态（白色图标）
+            } else {
+                // 日间模式：白色背景，黑色图标
+                window.statusBarColor = Color.WHITE
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            }
         }
-
     }
 }
